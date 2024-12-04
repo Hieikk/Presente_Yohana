@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOGUINHOS</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza os elementos horizontalmente */
+      min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+      margin: 0; /* Remove margens padrão */
+      background-color: #b0faae;
+      font-family:'Courier New', Courier, monospace;
+    }
+
+    .content {
+      margin-top: 20px; /* Espaço entre o topo e a div */
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center; /* Centraliza o texto */
+      width: 100%;
+      max-width: 570px; /* Define a largura máxima da div */
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column; /* Organiza os botões verticalmente */
+      gap: 10px; /* Espaçamento entre os botões */
+      position: absolute; /* Permite posicionamento independente */
+      top: 55%; /* Move o contêiner para 50% da altura da página */
+      transform: translateY(-50%); /* Centraliza verticalmente o contêiner */
+      font-family:'Courier New', Courier, monospace; 
+    }
+    h1 {
+      font-size: 70px; /* Aumenta o tamanho da fonte */
+      font-weight: bold; /* Deixa o título em negrito */
+      margin: 0; /* Remove a margem padrão */
+      font-family:'Courier New', Courier, monospace;
+      color: #184117
+    }
+    button {
+      padding: 30px 50px;
+      font-size: 16px;
+      border: 1px solid #2f802d;
+      border-radius: 15px; /* Cantos arredondados */
+      background-color: #318b2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family:'Courier New', Courier, monospace;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #184117;
+      transform:scale(1.3)
+    }
+    .gif-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 250px; /* Altura do GIF */
+      background: url('https://media.baamboozle.com/uploads/images/162312/1618931144_458477_gif-url.gif') repeat-x;
+      background-size: contain;
+      pointer-events: none;
+    }
+    .gif-top-left,
+    .gif-top-right {
+      position: fixed; /* Garante que os GIFs fiquem fixos no lugar */
+      width: 200px; /* Ajusta o tamanho do GIF */
+      height: auto;
+      z-index: 999; /* Garante que fique acima de outros elementos */
+    }
+
+    .gif-top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .gif-top-right {
+      top: 0;
+      right: 0;
+      transform: scaleX(-1)
+    }
+    .giftit{
+      width:60px;
+      position:center;
+    }
+  </style>
+</head>
+<body>
+  <img
+    src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif"
+    alt="GIF Topo Esquerdo"
+    class="gif-top-left"
+  />
+
+  <!-- GIF no canto superior direito -->
+  <img
+    src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif"
+    alt="GIF Topo Direito"
+    class="gif-top-right"
+  />
+
+  <!-- Div centralizada no topo -->
+  <div class="content">
+    <h1>JOGOS PARA MEU AMOR</h1>
+  </div>
+  <div>
+    <center><img src="https://i.pinimg.com/originals/bf/49/8a/bf498a2fb147dd769f7032706c793c1b.gif" class="giftit"></center>
+  </div>
+  <!-- Botões centralizados no centro exato da página -->
+  <div class="button-container">
+    <button onclick="window.location.href='index.html';">Voltar</button>
+    <button onclick="window.location.href='quizyoh.html'">Quiz</button>
+    <button onclick="window.location.href='casamento.html'">Casa comigo?</button>
+  </div>
+
+  <div class="gif-footer"></div>
+</body>
+</html>

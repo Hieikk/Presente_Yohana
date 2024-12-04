@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOGUINHOS</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #b0faae;
+      font-family:'Courier New', Courier, monospace;
+    }
+
+    .content {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      width: 100%;
+      max-width: 570px;
+    }
+
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px; /* Espaço entre o quiz e os botões */
+      font-family:'Courier New', Courier, monospace; 
+    }
+
+    h1 {
+      font-size: 70px;
+      font-weight: bold;
+      margin: 0;
+      font-family:'Courier New', Courier, monospace;
+      color: #184117;
+    }
+
+    button {
+      padding: 30px 50px;
+      font-size: 16px;
+      border: 1px solid #2f802d;
+      border-radius: 15px;
+      background-color: #318b2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family:'Courier New', Courier, monospace;
+      font-weight: bold;
+    } 
+
+    .button2 {
+      padding: 15px 30px;
+      font-size: 16px;
+      border: 1px solid #2f802d;
+      border-radius: 15px;
+      background-color: #318b2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family:'Courier New', Courier, monospace;
+      font-weight: bold; 
+      position:center;
+    }
+    .button2:hover {
+      background-color: #184117;
+      transform: scale(1.3);
+    }
+
+    button:hover {
+      background-color: #184117;
+      transform: scale(1.3);
+    }
+
+    .gif-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('https://media.baamboozle.com/uploads/images/162312/1618931144_458477_gif-url.gif') repeat-x;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    .gif-top-left,
+    .gif-top-right {
+      position: fixed;
+      width: 200px;
+      height: auto;
+      z-index: 999;
+    }
+
+    .gif-top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .gif-top-right {
+      top: 0;
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .giftit {
+      width: 60px;
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+    <script>
+  function submitQuiz(event) {
+    // Impede o comportamento padrão do botão
+    event.preventDefault();
+
+    let correctAnswers = 0;
+    const totalQuestions = 10;
+
+    // Obtenha as respostas selecionadas
+    const answers = [
+      document.querySelector('input[name="q1"]:checked'),
+      document.querySelector('input[name="q2"]:checked'),
+      document.querySelector('input[name="q3"]:checked'),
+      document.querySelector('input[name="q4"]:checked'),
+      document.querySelector('input[name="q5"]:checked'),
+      document.querySelector('input[name="q6"]:checked'),
+      document.querySelector('input[name="q7"]:checked'),
+      document.querySelector('input[name="q8"]:checked'),
+      document.querySelector('input[name="q9"]:checked'),
+      document.querySelector('input[name="q10"]:checked'),
+    ];
+
+    // Valida cada resposta
+    answers.forEach((answer) => {
+      if (answer && answer.value === 'correct') {
+        correctAnswers++;
+      }
+    });
+
+    // Calcula respostas incorretas
+    const incorrectAnswers = totalQuestions - correctAnswers;
+
+    // Determina a mensagem com base nos acertos
+    let message = "";
+    if (correctAnswers <= 2) {
+      message = "Oloco como você errou tudo isso, achei que me amava..";
+    } else if (correctAnswers <= 5) {
+      message = "Sabe quase nada de mim né, tsk tsk pode não, presta mais atenção!";
+    } else if (correctAnswers <= 9) {
+      message = "EBAAA, muito obrigado nenha, se acertou isso tudo é porque sabe bastante de mim, mas tenta acertar tudo, quem sabe você ganha uma mensagem especial :3 te amo";
+    } else if (correctAnswers === 10) {
+      message = "Caramba, você lembrou de tudo isso mesmo ou só ficou errando e tentando até descobrir as respostas certas? Bem, não importa, porque o importante é que você continuou tentando né? Continuou persistindo sendo a garota incrível que você é, eu tive muita sorte, muita sorte mesmo de ter encontrado alguém como você aleatóriamente, você me mostrou tantas coisas, e me fez fazer coisas tão incríveis só pra tirar um sorriso bobo do seu rosto, todos os dias da minha vida eu levanto pensando em como eu posso te fazer pelo menos um pouquinho mais feliz sabia? E é verdade, porque te ver sorrir sempre me trás um frio gostoso na barriga, é dificil de explicar o que eu sinto por você, de verdade, mas é algo que eu nem preciso me esforçar para manter, eu te amo muito e incondicionalmente Yohana, muito obrigado por jogar comigo :)";
+    }
+
+    // Exibe o resultado
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `
+      <p>Você acertou <strong>${correctAnswers}</strong> de ${totalQuestions} perguntas.</p>
+      <p>${message}</p>
+    `;
+  }
+</script>
+</head>
+<body>
+  <img src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif" alt="GIF Topo Esquerdo" class="gif-top-left" />
+  <img src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif" alt="GIF Topo Direito" class="gif-top-right" />
+
+  <div class="content">
+    <h1>QUIZ DO MIGUEL</h1>
+  </div>
+  <div>
+    <img src="https://i.pinimg.com/originals/bf/49/8a/bf498a2fb147dd769f7032706c793c1b.gif" class="giftit">
+  </div>
+  <div class="quiz-container">
+    <form id="quizForm">
+      <div class="question">
+        <label>1. Qual é a minha banda favorita?</label><br>
+        <input type="radio" name="q1" value="correct" id="q1a"> Linkin Park<br>
+        <input type="radio" name="q1" value="wrong" id="q1b"> Deftones<br>
+        <input type="radio" name="q1" value="wrong" id="q1c"> Nirvana<br>
+      </div>
+      <div class="question">
+        <label>2. Qual é meu álbum favorito do Weezer?</label><br>
+        <input type="radio" name="q2" value="wrong" id="q2a"> Blue Album<br>
+        <input type="radio" name="q2" value="wrong" id="q2b"> Não sei<br>
+        <input type="radio" name="q2" value="correct" id="q2c"> Pinkerton<br>
+      </div>
+      <div class="question">
+        <label>3. Qual é meu filme favorito</label><br>
+        <input type="radio" name="q3" value="correct" id="q3a"> Homem Aranha 3 da Trilogia do Tobey Maguire<br>
+        <input type="radio" name="q3" value="wrong" id="q3b"> Coraline<br>
+        <input type="radio" name="q3" value="wrong" id="q3c"> Sonic<br>
+      </div>
+      <div class="question">
+        <label>4. Qual é meu jogo favorito?</label><br>
+        <input type="radio" name="q4" value="correct" id="q4a"> Zelda Breath of the Wild<br>
+        <input type="radio" name="q4" value="wrong" id="q4b"> Minecraft<br>
+        <input type="radio" name="q4" value="wrong" id="q4c"> Sonic Mania<br>
+      </div>
+      <div class="question">
+        <label>5. Que série de Minecraft marcou minha infância?</label><br>
+        <input type="radio" name="q5" value="correct" id="q5a"> Minecraft O Sonho<br>
+        <input type="radio" name="q5" value="wrong" id="q5b"> Chumelabs<br>
+        <input type="radio" name="q5" value="wrong" id="q5c"> Namorada Perfeita<br>
+      </div>
+      <div class="question">
+        <label>6. Quem eu amo mais?</label><br>
+        <input type="radio" name="q6" value="correct" id="q6a"> Yohana<br>
+        <input type="radio" name="q6" value="correct" id="q6b"> Nenha<br>
+        <input type="radio" name="q6" value="correct" id="q6c"> Camilinda<br>
+      </div>
+      <div class="question">
+        <label>7. Qual foi o dia que você disse que gostava de mim?</label><br>
+        <input type="radio" name="q7" value="correct" id="q7a"> 02/07<br>
+        <input type="radio" name="q7" value="wrong" id="q7b"> 04/08<br>
+        <input type="radio" name="q7" value="wrong" id="q7c"> 03/07<br>
+      </div>
+      <div class="question">
+        <label>8. Qual foi o nome que eu tinha no seu contato antes da gente começar a namorar?</label><br>
+        <input type="radio" name="q8" value="wrong" id="q8a"> yoyoh <br>
+        <input type="radio" name="q8" value="wrong" id="q8b"> airfryer e linkin park<br>
+        <input type="radio" name="q8" value="correct" id="q8c"> Camila kabesuda<br>
+      </div>
+      <div class="question">
+        <label>9. Na primeira foto que você tirou minha, eu estava usando uma camisa do:</label><br>
+        <input type="radio" name="q9" value="wrong" id="q9a"> Alice and Chains<br>
+        <input type="radio" name="q9" value="correct" id="q9b"> Metallica<br>
+        <input type="radio" name="q9" value="wrong" id="q9c"> Nirvana<br>
+      </div>
+      <div class="question">
+        <label>10. Vai querer casar comigo?</label><br>
+        <input type="radio" name="q10" value="correct" id="q10a"> Sim<br>
+        <input type="radio" name="q10" value="correct" id="q10b"> Claro<br>
+        <input type="radio" name="q10" value="correct" id="q10c"> Com Certeza<br>
+      </div>
+      <center>
+  <button class="button2" type="button" onclick="submitQuiz(event)">Enviar Respostas</button>
+</center>
+    </form>
+    <div class="result" id="result"></div>
+  </div>  
+  <div class="button-container">
+    <button onclick="window.location.href='index.html';">Voltar</button>
+  </div>
+  <div class="gif-footer"></div>
+</body>
+</html>

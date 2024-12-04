@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALERIA</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #b0faae;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    h1 {
+      font-size: 70px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #184117;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 90%;
+      max-width: max-content;
+      margin-bottom: 30px;
+    }
+
+    .gallery-item {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 550px;
+      height: 550px;
+      object-fit: cover;
+    }
+
+    .gallery-item .description {
+      padding: 20px;
+      color: #333;
+      font-size: 22px; /* Tamanho maior para o texto */
+      line-height: 1.5;
+      text-align: left;
+      flex: 1;
+    }
+
+    button {
+      margin: 30px 0;
+      padding: 40px 60px;
+      font-size: 18px;
+      border: none;
+      border-radius: 15px;
+      background-color: #318b2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #184117;
+      transform: scale(1.1);
+    }
+
+    .gif-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://media.baamboozle.com/uploads/images/162312/1618931144_458477_gif-url.gif') repeat-x;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    .gif-top-left,
+    .gif-top-right {
+      position: fixed;
+      width: 200px;
+      height: auto;
+      z-index: 999;
+    }
+
+    .gif-top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .gif-top-right {
+      top: 0;
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .giftit {
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- GIF no canto superior esquerdo -->
+  <img
+    src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif"
+    alt="GIF Topo Esquerdo"
+    class="gif-top-left"
+  />
+
+  <!-- GIF no canto superior direito -->
+  <img
+    src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif"
+    alt="GIF Topo Direito"
+    class="gif-top-right"
+  />
+
+  <!-- Título -->
+  <h1>GALERIA DE FOTOS</h1>
+
+  <!-- Ícone centralizado -->
+  <div>
+    <center>
+      <img src="https://i.pinimg.com/originals/bf/49/8a/bf498a2fb147dd769f7032706c793c1b.gif" class="giftit">
+    </center>
+  </div>
+
+  <!-- Galeria -->
+  <div class="gallery">
+    <!-- Replicando 11 imagens com descrições -->
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740365173358693/2037F50D-9ADE-46BA-B0EA-72861339F664.jpg?ex=67513b8f&is=674fea0f&hm=9e44045ae0adc2dd8a225de051a96abf605dd1a412d3ee26c49e37c360f4f90e&=&format=webp&width=448&height=596" alt="Imagem 1">
+      <div class="description">
+        <p>Essa é uma das nossas fotos mais recentes, não sei porque eu gosto dela, eu acho bom o contraste de você linda e eu parecendo um cadáver.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740365450186752/2AD118A7-DE8F-49EA-9163-33CA4B42E330.jpg?ex=67513b8f&is=674fea0f&hm=ce0b564193284b072b9b7050669f66b70dc6a54e7b207dc4113060cdf12c7f36&=&format=webp&width=448&height=596" alt="Imagem 2">
+      <div class="description">
+        <p>Disparada uma das minhas fotos favoritas, não só por você estar que nem uma diva, e sim porque você tá imitando o rosto que você fazia nas fotos quando pequena, é muito engraçado e fofo.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313743173998346250/image.png?ex=67513e2c&is=674fecac&hm=8e14094d3cbad9f72dd4709103f38807ea4cdd3b2331187403f7bb08aa1348f6&=&format=webp&quality=lossless&width=475&height=350" alt="Imagem 3">
+      <div class="description">
+        <p>Você tá LINDA nessa foto, ABSURDAMENTE LINDA, sempre que me perguntam como é a minha namorada eu SEMPRE mostro essa foto, porque você tá um ARRASO</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740366331248680/84D2E040-6D04-4E34-8990-2ED171E3A8F5.jpg?ex=67513b8f&is=674fea0f&hm=cbae244116f5e46aad0885619de6f4edaeedd8880d2c100f998a0c0133ca5718&=&format=webp&width=448&height=596" alt="Imagem 4">
+      <div class="description">
+        <p>Essa foto a gente tirou um tempo antes de eu raspar o cabelo, eu gosto dela porque.. porque eu posso.. E suas antenas tavam engraçadas</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740366582775859/95D797A9-E7FA-4812-A2FD-2FCD2E1D2523.jpg?ex=67513b8f&is=674fea0f&hm=b771059aca617437ecfcbdb5a9728d7fd0e43a127c1276a05d1bcb1c0bf6dd05&=&format=webp&width=336&height=597" alt="Imagem 5">
+      <div class="description">
+        <p>Aqui a gente tava no ponto de ônibus, eu acho essa foto MUITO engraçada só por causa da sua cara, sei lá parece que você é doida e me ama não sei</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740366842695690/AD9ED9B6-2F2C-4043-A589-BBFF9A50D588.jpg?ex=67513b8f&is=674fea0f&hm=0f5c1eb47f17cfc000c031ab90e15085fa0739b195559181ae5aae4915283cd0&=&format=webp&width=494&height=597" alt="Imagem 6">
+      <div class="description">
+        <p>Não é uma foto, mas é daquela trend que a gente fez lembra? Sobre as coisas que lembram um ao outro, e esse foi o que eu fiz :3</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740367115452478/4CC01E77-6D10-4480-B845-07930EE17DDF.jpg?ex=67513b8f&is=674fea0f&hm=656127badeb1b86feb0c9c33f91501dd066de2c844e5949105aa8787c99f9c0b&=&format=webp&width=336&height=596" alt="Imagem 7">
+      <div class="description">
+        <p>Essa foto em específico eu gosto porque parece que você é uma nerd SUPER BIZARRA ( indireta pra linguiça ), mas é aquelas bizarras e fofas ( bem diferente da linguiça )</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740367354658836/AC16226A-11F0-42F1-B471-C0501F8F0B78.jpg?ex=67513b8f&is=674fea0f&hm=6b0d5e362d3b05e3476224d05e2a2c6a40e8a348b5fd45eeaf4ecbc82496b3c7&=&format=webp&width=336&height=596" alt="Imagem 8">
+      <div class="description">
+        <p>ai senhor essa foto 🛐🛐 dá vontade de deixar vc me bater até eu chamar de mamãe e lamber seus pés🛐🛐🛐🛐</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740367694270524/527B22FC-9EBF-4B95-BB9E-5699D3714104.jpg?ex=67513b8f&is=674fea0f&hm=b22dab4b2dba253f9ea5c3e1a3aa83cc6c60eb27f6bffd1bee082333fd17c7a6&=&format=webp&width=336&height=597" alt="Imagem 9">
+      <div class="description">
+        <p>Essa eu acho que seja a foto mais antiga que eu tenho da gente na escola, eu lembro bem que era a época aonde a gente ainda tava conhecendo o povo, e você super extrovertida tentando me ajudar, e eu tentando me fechar ao MÁXIMO com medo e ódio de tudo e todos, menos de vc pq eu te amo.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740368126148718/4A628E31-30A4-4B00-AD55-AF81B685FB8E.jpg?ex=67513b8f&is=674fea0f&hm=198b9650108861019a9f2cd8d295dd242fbaa9a1fd7f96b72a20e5cf66417468&=&format=webp&width=336&height=596" alt="Imagem 10">
+      <div class="description">
+        <p>Essa foto foi uma das minhas favoritas por um bom tempo, já foi até meu wallpaper, se aquela ali é a minha foto favorita com você de cabelo liso, essa é a minha favorita com você de cabelo natural, é SÉRIO você tava uma FOFA uma GRAÇA AAAAAAAA</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740378486214777/921E65FA-81B4-4193-ACBC-47D96914F566.jpg?ex=67513b92&is=674fea12&hm=82d6c90a8dc0445855b85793cc2ab3166a396988e177a0f9477564d33e1236b1&=&format=webp&width=336&height=597" alt="Imagem 11">
+      <div class="description">
+        <p>E aqui termina, com o meu xodózinho, a minha foto favorita com nós dois juntos, era quase o fim do ano no attilio, eu amo essa foto porque ela é muito bobinha e ainda assim significa muita coisa pra mim, eu te amo, tá bem?</p>
+      </div>
+  </div> 
+  <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/649048433293918218/1313740378721222658/4846C468-B6CE-4429-BED1-CA5E3FA14E57.jpg?ex=67513b92&is=674fea12&hm=9eb8d784f4a87d5ee818c22341385e1408421ad298fddd6702e58247d43b7447&=&format=webp&width=597&height=597" alt="Imagem 12">
+      <div class="description">
+        <p>Aqui é o primeiro desenho, quem fez foi o Qojem ( o menino que eu disse pra você aquele dia ), e quem pintou foi o Gui ( eu duvido que você lembre mas ele foi uma das pessoas que te entrevistou ), eu não especifiquei nada de como seria, só falei que queria algo fofo e engraçado, porque você é fofa e engraçada :3</p>
+      </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://media.discordapp.net/attachments/649048433293918218/1313740379232800831/5253A107-2EC4-4EE8-AC37-55988E98B2C2.jpg?ex=67513b92&is=674fea12&hm=ba94319e3ffc7938d194ccebc5ba41737a2d5ebbdafc68aed3c141e4e4af879b&=&format=webp&width=597&height=597" alt="Imagem 13">
+        <div class="description">
+          <p>O segundo foi a mesma coisa, quem desenhou foi o Qojem e quem pintou foi o Gui, a intenção era a gente ser aqueles ovos que tem gema dupla, por que? Bem, eu achei engraçado, e o Qojem durante a conversa sobre isso foi comer um ovo e ele veio com gema dupla, de acordo com ele, é um ovo gourmet, então somos ovos gourmet :D</p>
+        </div>
+      </div>
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/649048433293918218/1313740379564019753/DA2DC104-3B9F-408A-908B-66BDE045FA02.jpg?ex=67513b92&is=674fea12&hm=6cda29bddd5eefdd7a98edda07b256f78e1bcd2716fb113a30070aa87cc7938c&=&format=webp&width=597&height=597" alt="Imagem 14">
+          <div class="description">
+            <p>E essa aqui é a ultima da galeria, foi desenhado e pintado pelo Qojem mesmo, porque ele quis pintar você, quando eu questionei do tom do cabelo ele disse as sábias palavras: "escolha artística.", e eu aceitei, pois não posso sufocar o artista, enfim.. Espero que tenha gostado! Porque deu um trabalhão, não só pra mim que teve que montar a bagaça toda, mas pro Qojem e pro Gui que foram devidamente pagos pelo serviço, já o meu pagamento pode ser amor infinito ok? BEIJOS TE AMOOO</p>
+          </div>
+        </div>
+  </div>
+
+  <!-- Botão de voltar -->
+  <button onclick="window.location.href='index.html';">Voltar</button>
+
+  <!-- GIF rodapé -->
+  <div class="gif-footer"></div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOGUINHOS</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza os elementos horizontalmente */
+      min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+      margin: 0; /* Remove margens padrão */
+      background-color: #b0faae;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden; /* Evita rolagem */
+      position: relative; /* Para posicionamento absoluto funcionar */
+    }
+
+    .content {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      width: 100%;
+      max-width: 570px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column; /* Organiza os botões verticalmente */
+      gap: 10px;
+      margin-top: 20px; /* Espaço entre o quiz e os botões */
+      font-family: 'Courier New', Courier, monospace; 
+    }
+
+    h1 {
+      font-size: 70px;
+      font-weight: bold;
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      color: #184117;
+    }
+
+    button {
+      padding: 30px 50px;
+      font-size: 16px;
+      border: 1px solid #2f802d;
+      border-radius: 15px;
+      background-color: #318b2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      position: absolute; /* Para movimentar o botão */
+    }
+
+    button:hover {
+      background-color: #184117;
+      transform: scale(1.3);
+    }
+
+    .fixed-button {
+      position: static; /* O botão de "Voltar" permanece fixo */
+    }
+
+    .gif-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://media.baamboozle.com/uploads/images/162312/1618931144_458477_gif-url.gif') repeat-x;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    .gif-top-left,
+    .gif-top-right {
+      position: fixed;
+      width: 200px;
+      height: auto;
+      z-index: 999;
+    }
+
+    .gif-top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .gif-top-right {
+      top: 0;
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .giftit {
+      width: 60px;
+      display: block;
+      margin: 10px auto;
+    }
+
+    /* Centralizar o botão "Sim" */
+    .center-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Alinha horizontalmente */
+      align-items: center; /* Alinha verticalmente */
+      height: 80vh; /* Altura para centralizar verticalmente */
+      width: 100%; /* Garantir que a largura ocupe toda a tela */
+    }
+
+    .center-button button {
+      margin-bottom: 20px; /* Espaço entre o botão Sim e Voltar */
+    }
+  </style>
+  <script>
+    // Função que move o botão para uma posição aleatória na tela
+    function moverBotaoAleatoriamente(button) {
+      const screenWidth = window.innerWidth; // Largura da janela
+      const screenHeight = window.innerHeight; // Altura da janela
+      const buttonWidth = button.offsetWidth; // Largura do botão
+      const buttonHeight = button.offsetHeight; // Altura do botão
+
+      // Gerar novas coordenadas aleatórias dentro dos limites da tela
+      const newLeft = Math.random() * (screenWidth - buttonWidth); // Garantir que o botão não ultrapasse a borda direita
+      const newTop = Math.random() * (screenHeight - buttonHeight); // Garantir que o botão não ultrapasse a borda inferior
+
+      // Atualizar a posição do botão
+      button.style.left = `${newLeft}px`;
+      button.style.top = `${newTop}px`;
+    }
+
+    // Função para iniciar o movimento aleatório do botão quando clicado
+    function fugirDoClique(event) {
+      const button = event.target;
+      moverBotaoAleatoriamente(button);
+    }
+
+    // Função para mostrar a mensagem
+    function mostrarMensagem() {
+      alert('Esse foi disparado o jogo mais bobo que eu fiz, mas eu não sou muito criativo, me desculpa :3 Mas falando nisso, você é uma das pessoas mais criativas e dispostas a criar coisas que eu conheço, parece um super poder isso sério, é uma das coisas que eu sinto inveja em você, você é tão cuidadosa e gosta de fazer seus presentes a mão, faz o crochê e até os origami parecer fácil, enquanto eu não consigo sequer usar uma régua! Enfim, ainda bem que você quer casar comigo, e olha que eu deixei totalmente possível você clicar no botão de recusar em.. CASA COMIGO LOGO YOHANA! TE AMO!');
+    }
+
+    // Inicializa o botão em uma posição aleatória ao carregar a página
+    window.onload = function () {
+      const movingButton = document.getElementById('fujao');
+      moverBotaoAleatoriamente(movingButton);
+    };
+  </script>
+</head>
+<body>
+  <img src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif" alt="GIF Topo Esquerdo" class="gif-top-left" />
+  <img src="https://64.media.tumblr.com/e864bdf539e9e23c013f274574eb13b9/44d2b47f11dc65fc-41/s400x600/c7435f0975d1e4eaf180069ea1f45f9f082c0187.gif" alt="GIF Topo Direito" class="gif-top-right" />
+
+  <div>
+    <h1> Quer casar comigo?</h1>
+  </div>
+
+  <!-- Div para centralizar os botões "Sim" e "Voltar" -->
+  <div class="center-button">
+    <!-- Botão "Sim" -->
+    <button class="fixed-button" onclick="mostrarMensagem()">Sim</button>   
+
+    <!-- Botão "Voltar" -->
+    <button class="fixed-button" onclick="window.location.href='index.html';">Voltar</button>
+
+  <div class="button-container">
+    <!-- Botão que viaja pela tela inteira -->
+    <button id="fujao" onclick="fugirDoClique(event)">Não</button>
+</div>
+  <div class="gif-footer"></div>
+</body>
+</html>
